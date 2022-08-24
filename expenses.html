@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="expenses.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+    <div id="main">
+        <h1>Expenses</h1>
+        <div id="trackExp">
+            <button id="track">+ Track expenses</button>
+            <button id="team">Teammates </button>
+        </div>
+        <div id="teammates"></div>
+        <div id="expensesForm">
+            <div>
+                <div style="width:15% ;">
+                    <h3>Date</h3>
+                    <input type="date">
+                </div>
+                <div style="width:65% ;">
+                    <h3>Project / Category</h3>
+                    <input type="text" placeholder="Choose a project..."><br>
+                    <select name="" id="">
+                        <option value="">Choose a category...</option>
+                        <option value="Entertainment ">Entertainment</option>
+                        <option value="Lodging">Lodging</option>
+                        <option value="Meal">Meal</option>
+                        <option value="Mileage">Mileage</option>
+                        <option value="Other">Other</option>
+                        <option value="Transportation">Transportation</option>
+                    </select><br>
+                    <input type="text" placeholder="Notes (Optional)"><br>
+                    <div style="border: 1px dotted; height: 20px; ">Attach receipt</div>
+                    <div><input type="checkbox" style="width: 10px;">This expense is billable</div>
+                    <button>Save expense</button>
+                    <button>Cancel</button>
+                </div>
+                <div style="width:20% ;">
+                    <h3>Amount</h3>
+                    <input type="text" placeholder="$" id="amount">
+                </div>
+            </div>
+        </div>
+        <div id="addedExp"></div>
+    </div>
+</body>
+</html>
+<script src="/expenses.js"></script>
