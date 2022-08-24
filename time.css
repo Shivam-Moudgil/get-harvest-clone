@@ -1,0 +1,155 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#sgmain{
+border: 1px solid gray;
+
+}
+#sgMainBody{
+border: 1px solid red;
+/* display: grid; */
+width:95%;
+margin: auto;
+}
+#sgShowDayHeading{
+border: 1px solid green;
+height: 80px;
+
+
+
+}
+#sgTrackTime{
+border: 2px solid black;
+width: 7%;
+height: 100px;
+/* position: relative;
+top: 80px; */
+}
+#sgTempToShowFlex{
+display: flex;
+justify-content: space-between;
+}
+#sgDayViewTable{
+border: 1px solid khaki;
+width: 92%;
+display: flex;
+height: 1000px;
+}
+#sgLogo{
+border: 1px solid pink;
+height: 80px;
+margin: 8px;
+background-color: #188433 ;
+border-radius: 12px;
+margin-bottom: 20px;
+}
+#sgHr{
+width: 60%;
+display: flex;
+border: 1px solid white;  
+background-color: white;
+margin: auto;
+height: 1.2vh;
+border-radius: 3px;
+margin-top: 40%;
+
+}
+#sgVr{
+width: 1.2vh;
+display: flex;
+border: 1px solid white;  
+background-color: white;
+margin: auto;
+height: 60% ;
+margin-top: -30%;
+border-radius: 2px;
+}
+/* footer */
+#sgFooter{
+border: 1px solid gray;
+height: 200px;
+}
+#footerBody{
+border: 1px solid teal;
+margin: auto;
+width: 400px;
+text-align: center;
+margin: auto;
+margin-top: 20px;
+}
+#sgBottomNavList{
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+margin-top: 20px;
+}
+#sgHeaderBody{
+border: 1px solid gray;
+display: flex;   
+justify-content: space-between;
+margin: auto;
+margin-top: 10px;
+height: 40px;
+
+
+}
+#sgRightHeader{
+border: 1px solid teal;
+
+width: 30%;
+}
+#sgLeftHeader{
+border: 1px solid teal;
+width: 30%;
+margin-left: 140px;
+display: flex;
+}
+
+#dayList>ul>li:hover {
+text-decoration: underline;
+}
+
+#dayList>ul{
+display: flex;
+border: 1px solid gray;
+width: 1468px;
+justify-content: space-between;
+padding: 8px;
+}
+#dayList>ul>li{
+font-size: larger;
+color: gray;
+list-style-type: none;
+}
+#dayList>ul>li:last-child{
+color: #000000;
+}
+#timedProject{
+border: 1px solid gray;
+background: #efefef ;
+height: 400px;
+}
+#sgDayViewTable{
+display: block;
+}
+#timedProject>div{
+/* display: flex; */
+margin: auto;
+position: relative;
+text-align: center;
+top: 160px;
+font-size: larger;
+line-height: 28px;
+width: max-content;
+
+border: 1px solid gray;
+
+}
+
+#sgLeftHeader>nav{
+border: 1px solid yellow;
+width: 50px;
+height: 100%;
+}
