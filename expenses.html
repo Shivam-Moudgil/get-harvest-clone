@@ -12,20 +12,23 @@
     <div id="main">
         <h1>Expenses</h1>
         <div id="trackExp">
-            <button id="track">+ Track expenses</button>
-            <button id="team">Teammates </button>
+            <button id="track" style="background-color: green; color:white;"><b>+ Track expenses</b></button>
+            <button id="team" style="background-color: white; color:black;"><b>Teammates</b>  </button>
         </div>
         <div id="teammates"></div>
         <div id="expensesForm">
             <div>
                 <div style="width:15% ;">
-                    <h3>Date</h3>
-                    <input type="date">
+                    <h4>Date</h4>
+                    <input type="date" id="date">
                 </div>
                 <div style="width:65% ;">
-                    <h3>Project / Category</h3>
-                    <input type="text" placeholder="Choose a project..."><br>
-                    <select name="" id="">
+                    <h4>Project / Category</h4>
+                    <select name="" id="chooseProject">
+                        <option value="">Choose a project...</option>
+                        <option value="standing frog">standing frog</option>
+                    </select>
+                    <select name="" id="category">
                         <option value="">Choose a category...</option>
                         <option value="Entertainment ">Entertainment</option>
                         <option value="Lodging">Lodging</option>
@@ -34,19 +37,50 @@
                         <option value="Other">Other</option>
                         <option value="Transportation">Transportation</option>
                     </select><br>
-                    <input type="text" placeholder="Notes (Optional)"><br>
-                    <div style="border: 1px dotted; height: 20px; ">Attach receipt</div>
-                    <div><input type="checkbox" style="width: 10px;">This expense is billable</div>
-                    <button>Save expense</button>
-                    <button>Cancel</button>
+                    <input type="text" placeholder="Notes (Optional)" id="notes"><br>
+                    <div style="border: 1px dotted; 
+                                height: 40px; 
+                                margin: 5px 5px 10px 5px;
+                                border-radius: 5px;
+                                background-color: rgb(243, 240, 240); ">Attach receipt</div>
+
+                    <input type="checkbox" style="width: 20px;" id="checkbox">
+                    <label for="checkbox" style="margin-top:40px;">This expense is billable</label><br><br>
+            
+                    <button style="background-color: green; color:white;" id="saveExp_btn">Save expense</button>
+                    <button style="background-color: white; color:black; border: 1px solid grey;" id="cancel_btn">Cancel</button>
                 </div>
                 <div style="width:20% ;">
-                    <h3>Amount</h3>
-                    <input type="text" placeholder="$" id="amount">
+                    <h4>Amount</h4>
+                    <input type="text" placeholder="$" id="amount" style="height: 80px; font-size: 20px; padding: 5px;">
                 </div>
             </div>
         </div>
-        <div id="addedExp"></div>
+
+        <div id="addedExp">
+            <hr>
+            <div>
+                <h4>22 - 28 Aug 2022</h4>
+                <a href="#">Submit for approval</a>
+            </div>
+            <hr>
+            <div id="container">
+                <!-- <div id="box">
+                    <div>date</div>
+                    <div>
+                       <h4>project</h4>
+                       <p>category</p>
+                       <p>notes</p>
+                    </div>
+                    <h4>expense</h4>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
+                <hr> -->
+            </div>
+            <div id="total">Total</div>
+        </div>
+
     </div>
 </body>
 </html>
