@@ -1,0 +1,101 @@
+#foot{
+width: 100%;
+background-color: rgb(29, 30, 28);
+/* border:2px solid; */
+display: flex;
+flex-direction: column;
+/* align-items: center; */
+    font-family: MuotoWeb, sans-serif;
+    color:white;
+    gap:30px;
+   padding: 40px 0px;
+   transition: color .2s;
+}
+#foot_1{
+    display: flex; 
+    /* border: 1px solid; */
+    width: 90%;
+    /* align-items: center; */
+    margin: auto;
+    padding: 50px;
+    gap:40px;
+}
+#foot_1>div{
+display: flex;
+    /* border: 1px solid; */
+    width: 100%;
+}
+#foot_1>div>img{
+width: 300px;
+height: 70px;
+}
+#foot_1>div>div>p{
+color: rgb(218, 209, 209);
+font-size: 18px;
+letter-spacing: 0.6px;
+cursor: pointer;
+}
+#foot_1>div>div>p:hover{
+color: orange;
+}
+#foot_1>div>div{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+}
+#foot_1>div:nth-child(1){
+    width: 20%;
+    gap:60px;
+    justify-content: center;
+}
+#foot_1>div:nth-child(2){
+    width: 65%;
+    gap:100px;
+    justify-content: flex-start;
+    font-size: 21px;
+}
+#foot>button{
+    width: 80%;
+    margin: auto;
+    padding: 13px;
+    background-color: rgb(34, 32, 32);
+border-radius: 18px;
+border: 1px solid rgba(199, 122, 122, 0.368);
+color: rgb(148, 137, 137);
+font-weight: bold;
+margin-top: -20px;
+cursor: auto;
+}
+#foot>button:hover{
+    background-color:rgba(200, 189, 189, 0.059);
+}
+#foot>div{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    margin: auto;
+    /* border: 1px solid white; */
+}
+#foot>div>div{
+    display: flex;
+    /* border: 2px solid white; */
+    gap: 40px;
+}
+.sc{
+    display: flex;
+    align-items: center;
+    gap:9px;
+color:lightgray;
+cursor: pointer;
+font-size: 17px;
+}
+.sc:hover{
+    color: rgba(250, 93, 0, 100%);
+    text-shadow: rgb(29, 30, 28);
+}
+.sc>p:hover{
+    color: orangered;
+}
+.social{
+    font-size: 18px;
+}
