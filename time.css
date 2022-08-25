@@ -35,7 +35,7 @@ justify-content: space-between;
 border: 1px solid khaki;
 width: 92%;
 display: flex;
-height: 1000px;
+/* height: 500px; */
 }
 #sgLogo{
 border: 1px solid pink;
@@ -134,7 +134,7 @@ height: 400px;
 #sgDayViewTable{
 display: block;
 }
-#timedProject>div{
+#timedProject>#div1{
 /* display: flex; */
 margin: auto;
 position: relative;
@@ -153,3 +153,21 @@ border: 1px solid yellow;
 width: 50px;
 height: 100%;
 }
+.appendedProject{
+border: 1px solid teal;
+margin: 10px;
+padding: 10px;
+background-color: orange;
+display: flex;
+
+align-items: center;
+justify-content: space-between;
+}
+
+.rightSideOfProject{
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+

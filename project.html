@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #belowHeader{
+            display: flex;
+            justify-content: space-between;
+        }
+        #activePro>select{
+            font-size: larger;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        #filterProject>select{
+            font-size: larger;
+            padding: 5px;
+            border-radius: 10px;
+        }
+       
+        tr{
+            display: flex;
+            border: 1px solid gray;
+            width: 1680px;
+            justify-content: space-around;
+        }
+      
+
+        /* .meter { 
+  height: 1px;  
+  position: relative;
+  background: #555;
+  border-radius: 25px;
+  
+  padding: 10px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+} */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projects</h1>
+        <div id="belowHeader">
+            <div id="activePro">
+                <select name="" id="">
+                    <option value="">Active Projects</option>
+                    <option value="">Budget Projects</option>
+                    <option value="">Archived Projects</option>
+                </select>
+            </div>
+            <div id="filterProject">
+                <select name="" id="">
+                    <option value="">Filter By Client</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Filter By Manager</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>client</th>
+                <th>Budget</th>
+                <th>Spent</th>
+                <th></th>
+                <th>Remaining</th>
+                <th>costs</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="projectList">
+
+            <!-- <div class="meter">
+                <span style="width: 25%"></span>
+            </div>
+             -->
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+   
+   
+    let data=[
+        {
+            client:"suraj gundle",
+             budget:"$500",
+             spent:"$200",
+             remain:"$300",
+             costs:"$400"
+        },
+        {
+            client:"shubham gundle",
+             budget:"$1000",
+             spent:"$500",
+             remain:"$500",
+             costs:"$800"
+        }
+    ]
+    localStorage.setItem("projectLists",JSON.stringify(data))
+            let dataFromLS=JSON.parse(localStorage.getItem("projectLists"))
+
+            dataFromLS.forEach((el,index)=>{
+        let containerForShowList=document.querySelector(".projectList")
+        //containerForShowList.innerHTML=null;
+let {client,budget,spent,remain,costs} =el
+
+console.log(budget)
+
+        let tr1=document.createElement("tr")
+
+        let cli=document.createElement("td")
+        cli.innerText=client
+
+        let bud=document.createElement("td")
+        bud.innerText=budget;
+
+     
+        let spe=document.createElement("td")
+        spe.innerText=spent
+        let x1=document.createElement("td")
+        let progress=document.createElement("div")
+        progress.setAttribute("class")
+        x1.innerText="jsjjs";
+        let rem=document.createElement("td")
+        rem.innerText=remain
+        let cos=document.createElement("td")
+        cos.innerText=costs;
+        let x2=document.createElement("td")
+        x2.innerText="jjj"
+
+        tr1.append(cli,bud,spe,x1,rem,cos,x2)
+        containerForShowList.append(tr1)
+
+        
+    })
+    
+    
+</script>
