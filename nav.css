@@ -11,6 +11,7 @@
     position: fixed;
     top:0%;
     gap:10px;
+    z-index: 3;
 }
 #nav>div:nth-child(1){
     width: 20%;
@@ -51,6 +52,7 @@ gap:30px;
 }
 .nav-color{
     background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .nav-trans{
     background-color: transparent;
