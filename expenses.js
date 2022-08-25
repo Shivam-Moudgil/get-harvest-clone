@@ -71,11 +71,14 @@ let displayExpense=(data)=>{
 
         let b1=document.createElement("button");
         b1.innerText="Edit";
+        b1.onclick=()=>{
+            document.getElementById("expensesForm").style.display="block";
+        };
         let b2=document.createElement("button");
         b2.innerText="Delete";
         b2.onclick=()=>{
             deleteExpense(ele,index);
-        }
+        };
 
         let hr=document.createElement("hr");
 
@@ -88,5 +91,12 @@ let displayExpense=(data)=>{
 
 let deleteExpense=(ele,index)=>{
     let expenses=JSON.parse(localStorage.getItem("expenses"));
-    let data=expenses.filter
-}
+    let data=expenses.filter((e,ind)=>{
+        return index !== ind;
+    });
+    localStorage.setItem("expenses",JSON.stringify(data))
+    displayExpense(data);
+};
+
+import { bottom } from "./components/bottom.js";
+document.getElementById("bottom").innerHTML=bottom();

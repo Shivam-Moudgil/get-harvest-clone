@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="expenses.css">
+    <link rel="stylesheet" href="./components/bottom.css">
 </head>
 <body>
     <nav id="navbar"></nav>
@@ -15,7 +16,13 @@
             <button id="track" style="background-color: green; color:white;"><b>+ Track expenses</b></button>
             <button id="team" style="background-color: white; color:black;"><b>Teammates</b>  </button>
         </div>
-        <div id="teammates"></div>
+        <div id="teammates">
+            <input type="search" placeholder="Search...">
+            <p>a@gamil.com</p>
+            <p>p@gamil.com</p>
+            <p>a@gamil.com</p>
+            <p>a@gamil.com</p>
+        </div>
         <div id="expensesForm">
             <div>
                 <div style="width:15% ;">
@@ -45,7 +52,7 @@
                                 background-color: rgb(243, 240, 240); ">Attach receipt</div>
 
                     <input type="checkbox" style="width: 20px;" id="checkbox">
-                    <label for="checkbox" style="margin-top:40px;">This expense is billable</label><br><br>
+                    <label id="ok" for="checkbox">This expense is billable</label><br><br>
             
                     <button style="background-color: green; color:white;" id="saveExp_btn">Save expense</button>
                     <button style="background-color: white; color:black; border: 1px solid grey;" id="cancel_btn">Cancel</button>
@@ -80,8 +87,23 @@
             </div>
             <div id="total">Total</div>
         </div>
-
     </div>
+
+    <div id="bottom">
+        <!-- <div id="bottom-1">
+            <span>You have 29 days left in your free trial.</span>
+            <button>Upgrade</button>
+        </div>
+        <div id="bottom-2">
+            <img src="https://raw.githubusercontent.com/shovampo/standing-frog-1055/main/logo.png" alt="">
+            <p>Terms</p>
+            <p>Privacy</p>
+            <p>Status</p>
+            <p>Blog</p>
+            <p>Help</p>
+        </div> -->
+    </div>
+
 </body>
 </html>
-<script src="/expenses.js"></script>
+<script src="/expenses.js" type="module"></script>
