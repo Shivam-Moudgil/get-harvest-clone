@@ -1,5 +1,5 @@
 document.querySelector("#buttons>#cancel").addEventListener("click",()=>{
-    window.location.href="../manage.html"
+    window.location.href="../manage.html";
 });
 
 document.querySelector("#buttons>#saveClient").addEventListener("click",()=>{
@@ -7,7 +7,7 @@ document.querySelector("#buttons>#saveClient").addEventListener("click",()=>{
 });
 
 let clients=JSON.parse(localStorage.getItem("clients")) || [];
-console.log(clients)
+console.log(clients);
 
 let getData=()=>{
     let client={
@@ -17,8 +17,11 @@ let getData=()=>{
     };
     clients.push(client);
     localStorage.setItem("clients",JSON.stringify(clients));
+    localStorage.setItem("clientNameForAlert",JSON.stringify(client.name));
+    window.location.href="../manage.html";
 }
 
 
 import { bottom } from "../../components/bottom.js";
 document.getElementById("bottom").innerHTML=bottom();
+console.log(bottom());
