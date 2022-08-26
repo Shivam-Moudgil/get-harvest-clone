@@ -1,6 +1,6 @@
 let navbar = () => {
      return `
- <div><img src="./logo.png" alt=""></div>
+ <div><img id="logoH" src="./logo.png" alt=""></div>
   <div>
     <a href="">Why Harvest?</a>
     <a href="">Features</a>
