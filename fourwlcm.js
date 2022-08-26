@@ -33,6 +33,12 @@ let specifyo=()=>{
     return `<input type="email" class="emailin" id="number" placeholder="Please Specify..."><br>`
 }
 
+document.querySelector("#nexttowlcom").addEventListener("click",()=>{
+        window.location.href="./createfirstproject.html"
+})
+
+
+
 
 
 

@@ -62,6 +62,7 @@ button:hover{
     border: 0.5px solid black;
     border-radius: 5px;
     padding-left: 10px;
+    background-color: white;
 }
 
 .tickbox{
@@ -80,8 +81,11 @@ button:hover{
     align-items: center;
     gap: 10px;
     margin-top: 10px;
-   
 }
 #nexttowlcom{
     margin-top: 10px;
+}
+
+#skip{
+    margin-left: 36%;
 }
