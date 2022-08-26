@@ -17,7 +17,6 @@ nexttowlcom.addEventListener("click",()=>{
     }else{
         harvestlogin.data.push(details);
     }
-    
     console.log(harvestlogin);
     localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
     let harvestUser=JSON.parse(localStorage.getItem("harvestUser"))

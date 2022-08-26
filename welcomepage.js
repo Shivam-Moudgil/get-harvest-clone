@@ -14,6 +14,11 @@ let addbox=()=>{
     emailadd=document.querySelector("#emailadd").append(newin)
 }
 
+
+
+
+
+
 let postselect=()=>{
     return `<b>Invite your team now</b>
     <p  class="subhead">Exploring with teammates can help you learn Harvest, and it’s free during your trial. You can also invite them later.</p>
@@ -26,6 +31,7 @@ let postselect=()=>{
     <a href="#" onclick="addbox()">Add another</a>
     <br><br>`
 }
+let members=[];
 document.querySelector("#selectsize").addEventListener("change",()=>{
     size=document.querySelector("#selectsize").value;
     if(size==="select"){
@@ -40,6 +46,38 @@ document.querySelector("#selectsize").addEventListener("change",()=>{
         document.getElementById("cont").innerHTML = postselect();
     }
 })
+let temp;
 document.querySelector("#nexttowlcom").addEventListener("click",()=>{
+
+let harvestlogin=JSON.parse(localStorage.getItem("harvestlogin"));
+
+//console.log(harvestlogin);
+// if(harvestlogin,)
+if(harvestlogin.member===undefined){
+    harvestlogin.member=[];
+}
+
+
+for(let j=0; j<i; j++){
+    let index=j+1;
+    let idd=`email${index}`
+     temp=document.getElementById(idd).value;
+    if(temp!==null){
+        harvestlogin.member.push(temp)
+    }
+    console.log(harvestlogin)
+    localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
+    let harvestUser=JSON.parse(localStorage.getItem("harvestUser"))
+    //console.log(harvestUser)
+    for(let i=0; i<harvestUser.length; i++){
+        if(harvestUser[i].email=harvestlogin.email){
+            harvestUser[i]=harvestlogin;
+        }
+    }
+    localStorage.setItem("harvestUser",JSON.stringify(harvestUser))
+    console.log(harvestUser)
+}
 window.location.href="./secondwlcm.html"
 })
+
+
