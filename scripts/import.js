@@ -16,3 +16,8 @@ window.onscroll = () => {
 import footer from "../NAV&Footer/footer.js";
 console.log(footer);
 document.getElementById("foot").innerHTML = footer();
+
+
+document.getElementById("logoH").addEventListener("click", () => {
+  window.location.href="./index.html"
+})
