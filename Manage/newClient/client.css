@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif
+}
+#navbar{
+    border: 1px solid red;
+    height: 50px;
+}
+
+#main{
+    width: 55%;
+    margin:50px auto;
+}
+#main>p{
+    margin: 10px 0px;
+}
+#main>div{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+#client_currency_code,#name,#buttons,#textarea{
+   width: 70%;
+   height: 40px;
+   border-radius: 5px;
+}
+#textarea{
+    line-height: 1.4;
+    overflow: auto;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    resize: vertical;
+}
+#buttons>button{
+    font-size: 16px;
+    padding: 5px 10px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+}
+#buttons>button:nth-child(1){
+    background-color: green;
+    color: white;
+}
+
