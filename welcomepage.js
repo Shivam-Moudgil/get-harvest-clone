@@ -1,3 +1,83 @@
+// let size=document.querySelector("#selectsize").value;
+// // document.getElementById("myBtn").disabled = true;
+
+
+// let i=4;
+// let addbox=()=>{
+//     let newin=document.createElement("input")
+//     newin.type="email";
+//     newin.setAttribute("class","emailin")
+//     id=`email${i}`;
+//     newin.placeholder="name@example.com"
+//     newin.setAttribute("id",id)
+//     i++;
+//     emailadd=document.querySelector("#emailadd").append(newin)
+// }
+
+
+// let postselect=()=>{
+//     return `<b>Invite your team now</b>
+//     <p  class="subhead">Exploring with teammates can help you learn Harvest, and it’s free during your trial. You can also invite them later.</p>
+//     <div id="emailadd">
+//         <input type="email" class="emailin" id="email1" placeholder="name@example.com"><br>
+//  <input type="email" class="emailin" id="email2"  placeholder="name@example.com"><br>
+//  <input type="email" class="emailin" id="email3" placeholder="name@example.com"><br>
+//     </div>
+//     <br>
+//     <a href="#" onclick="addbox()">Add another</a>
+//     <br><br>`
+// }
+// let members=[];
+// document.querySelector("#selectsize").addEventListener("change",()=>{
+
+//     if(size==="select" ||size==="justme"){
+//         document.getElementById("cont").innerHTML = null;
+//     }else{
+//         document.getElementById("cont").innerHTML = postselect();
+//     }
+// })
+// let temp;
+
+// let nexttowlcom=document.querySelector("#nexttowlcom");
+// nexttowlcom.addEventListener("click",()=>{
+//     let harvestUser=JSON.parse(localStorage.getItem("harvestUser"));
+//     let harvestlogin=JSON.parse(localStorage.getItem("harvestlogin"));
+    
+
+//         console.log(harvestlogin,harvestUser)
+
+
+
+
+
+// // if(harvestlogin.member===undefined){
+// //     harvestlogin.member=[];
+// // }
+// // let harvestUser=JSON.parse(localStorage.getItem("harvestUser"))
+// // for(let j=0; j<i; j++){
+// //     let index=j+1;
+// //     let idd=`email${index}`
+// //      temp=document.getElementById(idd).value;
+// //     if(temp!==null){
+// //         harvestlogin.member.push(temp)
+// //     }
+// //     console.log(harvestlogin)
+// //     localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
+     
+// //     for(let i=0; i<harvestUser.length; i++){
+// //         if(harvestUser[i].email=harvestlogin.email){
+// //             harvestUser[i]=harvestlogin;
+// //         }
+// //     }
+// //     localStorage.setItem("harvestUser",JSON.stringify(harvestUser))
+// //     console.log(harvestUser)
+// // }
+
+// })
+
+// //localStorage.clear();
+
+
 let size=document.querySelector("#selectsize").value;
 // document.getElementById("myBtn").disabled = true;
 
@@ -52,13 +132,12 @@ document.querySelector("#nexttowlcom").addEventListener("click",()=>{
 let harvestlogin=JSON.parse(localStorage.getItem("harvestlogin"));
 
 //console.log(harvestlogin);
-// if(harvestlogin,)
+// if(harvestlogin,) 
 if(harvestlogin.member===undefined){
     harvestlogin.member=[];
 }
 
-
-for(let j=0; j<i; j++){
+for(let j=0; j<i-1; j++){
     let index=j+1;
     let idd=`email${index}`
      temp=document.getElementById(idd).value;
@@ -69,15 +148,37 @@ for(let j=0; j<i; j++){
     localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
     let harvestUser=JSON.parse(localStorage.getItem("harvestUser"))
     //console.log(harvestUser)
-    for(let i=0; i<harvestUser.length; i++){
-        if(harvestUser[i].email=harvestlogin.email){
-            harvestUser[i]=harvestlogin;
-        }
-    }
-    localStorage.setItem("harvestUser",JSON.stringify(harvestUser))
-    console.log(harvestUser)
+    // for(let i=0; i<harvestUser.length; i++){
+    //     if(harvestUser[i].email===harvestlogin.email){
+    //         harvestUser[i]=harvestlogin;
+    //     }  
+    // }
+    // localStorage.setItem("harvestUser",JSON.stringify(harvestUser))
+    // console.log(harvestUser)
 }
 window.location.href="./secondwlcm.html"
+ 
+
+// for(let j=0; j<i-1; j++){
+//     let index=j+1;
+//     let idd=`email${index}`
+//      temp=document.getElementById(idd).value;
+//     if(temp!==null){
+//         harvestlogin.member.push(temp)
+//     }
+//     console.log(harvestlogin)
+//     localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
+//     let harvestUser=JSON.parse(localStorage.getItem("harvestUser"))
+//     //console.log(harvestUser)
+//     for(let i=0; i<harvestUser.length; i++){
+//         if(harvestUser[i].email=harvestlogin.email){
+//             harvestUser[i]=harvestlogin;
+//         }
+//     }
+//     localStorage.setItem("harvestUser",JSON.stringify(harvestUser))
+//     console.log(harvestUser)
+// }
+// window.location.href="./secondwlcm.html"
 })
 
 
