@@ -1,5 +1,4 @@
 
-
 let harvestlogin=JSON.parse(localStorage.getItem("harvestlogin"));
 
 
@@ -11,16 +10,13 @@ nexttowlcom.addEventListener("click",()=>{
         budget:document.querySelector("#budget").value,
         costs:document.querySelector("#costs").value,
     }
+
+    if(harvestlogin.data===undefined){
+        harvestlogin.data=[];
+    }
  
-    harvestlogin.data=(details);
-    
-    console.log(harvestlogin);
+    harvestlogin.data.push(details);
     localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
    
     window.location.href="./laststep.html"
 })
-
-
-
-
-
