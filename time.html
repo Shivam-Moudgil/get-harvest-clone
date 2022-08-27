@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./time.css" />
+  </head>
+  <body>
+    <div id="smaln">
+      <div>
+        <a class="mol" href="">Timesheet</a>
+        <a href="">Pending Approval</a>
+        <a href="">Unsubmitted</a>
+        <a href="">Approved</a>
+      </div>
+    </div>
+    <div id="track">
+      <div id="t1">
+        <div>
+          <button class="bt1"><i class="fa">&#xf177;</i></button>
+          <button class="bt2"><i class="fa">&#xf178;</i></button>
+          <h1 id="sf"></h1>
+        </div>
+
+        <div>
+          <form>
+            <div class="sd-container">
+              <input class="sd" type="date" name="selected_date" />
+              <span class="open-button">
+                <button type="button"><i class="fa fa-calendar"></i></button>
+              </span>
+            </div>
+          </form>
+          <button class="bt1 kk">Date</button>
+          <button class="bt2">Week</button>
+        </div>
+      </div>
+      <button onclick="added()" id="add"><i class="fa fa-plus"></i></button>
+      <div id="fom"></div>
+
+      <div class="lop">
+        <div>
+          <div></div>
+          <div>
+            <button>Mon</button>
+            <p class="mon">0:00</p>
+          </div>
+          <div>
+            <button>Tue</button>
+            <p class="mon">0:00</p>
+          </div>
+          <div>
+            <button>Wed</button>
+            <p class="mon">0:00</p>
+          </div>
+          <div>
+            <button>Thu</button>
+            <p class="mon">0:00</p>
+          </div>
+          <div>
+            <button>Fri</button>
+            <p class="mon">0:00</p>
+          </div>
+          <div>
+            <button>Sat</button>
+            <p class="mon">0:00</p>
+          </div>
+        </div>
+        <div>
+          <div>
+            <p class="w">Week time</p>
+            <p class="clock"></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="tas">
+        <div>
+          <p class="hard"></p>
+          <p class="small"></p>
+        </div>
+        <div>
+          <p class="har hard">0:00</p>
+          <button class="timerr">🕑 Start</button>
+          <button>Edit</button>
+        </div>
+      </div>
+      <div id="tt"></div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let added = () => {
+    let a = document.getElementById("fom");
+    a.innerHTML = "";
+    // a.style.visibility="visible"
+    a.style.display = "block";
+    let div = document.createElement("div");
+    let div2 = document.createElement("div");
+    div2.setAttribute("class", "cut");
+    let h3 = document.createElement("h3");
+    let h4 = document.createElement("h4");
+    let form = document.createElement("form");
+    let sel = document.createElement("select");
+    let op6 = document.createElement("option");
+    let op7 = document.createElement("option");
+    let sel2 = document.createElement("select");
+    let op1 = document.createElement("option");
+    let op2 = document.createElement("option");
+    let op3 = document.createElement("option");
+    let op4 = document.createElement("option");
+    let op5 = document.createElement("option");
+
+    let in1 = document.createElement("input");
+    let in2 = document.createElement("input");
+    in2.setAttribute("id", "polo");
+    let remov = document.createElement("button");
+    let rsub = document.createElement("button");
+
+    h3.innerText = `New time entry for ${new Date().toDateString()}`;
+    h4.innerText = "Project / Task";
+    op6.innerText = "Example Project";
+    op7.innerText = "zz";
+    op1.innerText = "Design";
+    op2.innerText = "Marketing";
+    op3.innerText = "Programming";
+    op4.innerText = "Project Management";
+    op5.innerText = "Non-Bussiness Development";
+    in1.placeholder = "Notes(optional)";
+    in2.placeholder = "0:00";
+    rsub.innerText = "Submit";
+    remov.innerText = "❌";
+    rsub.style.padding = "10px 0px";
+    rsub.onclick = () => {
+      alert("done");
+    };
+
+    let sht = in2.value;
+    localStorage.setItem("sec", JSON.stringify({sht}));
+
+    remov.onclick = () => {
+      // a.style.visibility='hidden'
+      a.style.display = "none";
+    };
+
+    localStorage.setItem("tasks", JSON.stringify(op7));
+
+    div2.append(h3, remov);
+    sel.append(op6, op7);
+    sel2.append(op1, op2, op3, op4, op5);
+    form.append(h4, sel, sel2, in1, in2, rsub);
+    div.append(div2, form);
+    a.append(div);
+  };
+
+  document.getElementById("sf").innerText = new Date().toDateString();
+  let t = JSON.parse(localStorage.getItem("tasks"));
+  console.log(t);
+
+  document.querySelector(".timerr").addEventListener("click", () => {
+     let downloadTimer;
+    
+     let  v= document.querySelector(".har")
+     let yaar4 = document.querySelector(".timerr");
+      let a=v.value
+      if ((yaar4.innerText === "🕑 Start")) {
+   yaar4.innerText = "Stop";
+      
+    let timeleft = 10;
+ downloadTimer = setInterval(function () {
+      if (timeleft <= 0) {
+        clearInterval(downloadTimer);
+      }
+     v.innerText = `0:${10 - timeleft}`;
+      timeleft -= 1;
+    }, 1000);
+  
+} else if(yaar4.innerText==="Stop"){
+   
+    yaar4.innerText="🕑 Start"
+
+} 
+  });
+
+document.querySelector(".hard").innerText="hvjh"
+document.querySelector(".small").innerText="okk"
+
+
+</script>
