@@ -1,4 +1,3 @@
-
 /*
 1.   <link rel="stylesheet" href="./post_nav.css"></link>    -link to all page have navba
 
@@ -16,19 +15,23 @@ document.querySelector("#navbar").innerHTML=post_nav();
 
 
 */
-let post_nav=()=>{
-    return `    <div id="sub_nav">
+let post_nav = () => {
+  return `    <div id="sub_nav">
     <div class="path">
-    <h4  class="nav_ele" id="nav_Time">Time</h4>
-    <h4  class="nav_ele" id="nav_Expensess">Expensess</h4>
-    <h4  class="nav_ele" id="nav_Projects">Projects</h4>
-    <h4  class="nav_ele" id="nav_Reports">Reports</h4>
+     <a href="./time.html"><h4  class="nav_ele" id="nav_Time">Time</h4></a>
+      <a href="./expenses.html">  <h4  class="nav_ele" id="nav_Expensess">Expensess</h4></a>
+       <a href="./project.html"> <h4  class="nav_ele" id="nav_Projects">Projects</h4></a>
+        <a href="">  <h4  class="nav_ele" id="nav_Reports">Reports</h4></a>
+        <a href="./manage.html">  <h4  class="nav_ele" id="nav_Reports">Manage</h4></a>
+    
+  
+   
+  
     </div>
     <div  class="path">
         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" id="profilpic">
         <h4  class="nav_ele">Suryakanta</h4>
     </div>
-</div>`
-}
+</div>`;
+};
 export {post_nav};
-

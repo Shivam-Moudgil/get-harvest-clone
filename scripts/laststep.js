@@ -26,5 +26,6 @@ document.querySelector("#nexttowlcom").addEventListener("click",()=>{
         }
         i++;
     }
-    localStorage.setItem("harvestUser",JSON.stringify(harvestUser));
+    localStorage.setItem("harvestUser", JSON.stringify(harvestUser));
+   window.location.href="./time.html"
 })

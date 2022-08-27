@@ -14,7 +14,7 @@ document.querySelector("#signin").addEventListener("click",()=>{
         return email===ele.email;
     })
     if(user[0].password==password){
-        alert("Signin suceuss!")
+        alert("Signin success!")
         let harvestlogin=user[0];
         localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
         window.location.href="./welcomepage.html"

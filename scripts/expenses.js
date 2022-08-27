@@ -1,4 +1,4 @@
-import {bottom} from "./components/bottom.js";
+import {bottom} from "../components/bottom.js";
 document.getElementById("bottom").innerHTML = bottom();
 
 document.getElementById("track").addEventListener("click", () => {

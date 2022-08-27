@@ -2,7 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
-
+body{
+    background-color: rgb(255, 248, 241);
+}
 #sgBody {
     background-color:#fff8f1;
     width: 100%;

@@ -9,9 +9,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="./time.css" />
+    <link rel="stylesheet" href="./styles/time.css" />
+    <link rel="stylesheet" href="./styles/post_nav.css">
   </head>
   <body>
+    <div id="navbar"></div>
     <div id="smaln">
       <div>
         <a class="mol" href="">Timesheet</a>
@@ -127,7 +129,7 @@
     h3.innerText = `New time entry for ${new Date().toDateString()}`;
     h4.innerText = "Project / Task";
     op6.innerText = "Example Project";
-    op7.innerText = "zz";
+    op7.innerText = data.data.project;
     op1.innerText = "Design";
     op2.innerText = "Marketing";
     op3.innerText = "Programming";
@@ -158,8 +160,13 @@
     form.append(h4, sel, sel2, in1, in2, rsub);
     div.append(div2, form);
     a.append(div);
+    
   };
 
+let data=JSON.parse(localStorage.getItem("harvestlogin"))
+console.log(data.data);
+document.querySelector(".hard").innerText=data.data.project
+document.querySelector(".small").innerText=data.data.client
   document.getElementById("sf").innerText = new Date().toDateString();
   let t = JSON.parse(localStorage.getItem("tasks"));
   console.log(t);
@@ -180,17 +187,19 @@
       }
      v.innerText = `0:${10 - timeleft}`;
       timeleft -= 1;
-    }, 1000);
+    }, 3000);
   
 } else if(yaar4.innerText==="Stop"){
    
     yaar4.innerText="🕑 Start"
+    
 
 } 
   });
 
-document.querySelector(".hard").innerText="hvjh"
-document.querySelector(".small").innerText="okk"
+
+
 
 
 </script>
+<script src="./scripts/test.js" type="module"></script>

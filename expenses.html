@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/793365a31d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="expenses.css">
+    <link rel="stylesheet" href="./styles/expenses.css">
     <link rel="stylesheet" href="./components/bottom.css">
+    <link rel="stylesheet" href="./styles/post_nav.css">
 </head>
 <body>
     <nav id="navbar"></nav>
@@ -37,6 +38,7 @@
                     <select name="" id="chooseProject">
                         <option value="">Choose a project...</option>
                         <option value="standing frog">standing frog</option>
+                        <option id="olo" value="standing frog"></option>
                     </select>
                     <select name="" id="category">
                         <option value="">Choose a category...</option>
@@ -106,7 +108,12 @@
             <p>Help</p>
         </div> -->
     </div>
-
 </body>
 </html>
-<script src="/expenses.js" type="module"></script>
+<script>
+    let a=JSON.parse(localStorage.getItem("harvestlogin"));
+    document.getElementById("olo").innerText=a.data.project
+
+</script>
+<script src="/scripts/expenses.js" type="module"></script>
+<script src="/scripts/test.js" type="module"></script>

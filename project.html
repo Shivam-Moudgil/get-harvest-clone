@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project2 Page</title>
+    <link rel="stylesheet" href="./styles/post_nav.css">
     <style>
         #wholeOuterBody {
             border: 1px solid gray;
@@ -13,9 +14,10 @@
         }
 
         .pageBody {
-            border: 1px solid red;
+            /* border: 1px solid red; */
             width: 96%;
             margin: auto;
+            margin-top: 20px;
             /* height: 80px; */
         }
 
@@ -37,7 +39,7 @@
         }
 
         #belowHeader {
-            border: 1px solid teal;
+            /* border: 1px solid teal; */
             width: 96%;
             margin: auto;
             padding: 10px 0px;
@@ -77,12 +79,13 @@
             display: table-row; */
         }
         .tableRowList>th{
-            padding: 20px 77px;
+            padding: 20px 63px;
         }
     </style>
 </head>
 
 <body>
+    <div id="navbar"></div>
     <div id="wholeOuterBody">
 
         <div class="pageBody">
@@ -172,37 +175,35 @@
     ]
 
     localStorage.setItem("proInfo", JSON.stringify(data))
-    let dataFromLS = JSON.parse(localStorage.getItem("proInfo")) || []
+    let ld = JSON.parse(localStorage.getItem("harvestlogin")) || []
 
     let container = document.getElementById("sgTableContainer")
     container.innerHTML = null;
-    dataFromLS.forEach(({ client, name, budget, spent, progress, remaining, costs }) => {
 
-        progress=spent/budget*100;
 
-        remaining=100-progress;
 
         let client_name = document.createElement("td")
-        client_name.innerText = client
+        client_name.innerText = ld.data.client
         let nam = document.createElement("td")
-        nam.innerText = name;
+        nam.innerText = ld.data.project;
         let bud = document.createElement("td")
-        bud.innerText = budget;
+        bud.innerText = "34";
         let spen = document.createElement("td")
-        spen.innerText = spent;
+        spen.innerText = "20";
         let prog = document.createElement("td")
-        prog.innerText =`${progress}%`;
+        prog.innerText =`${50}%`;
         let remai = document.createElement("td")
-        remai.innerText =`${remaining}%` ;
+        remai.innerText =`${50}%` ;
         let cost = document.createElement("td")
         // cost.innerText = costs;
         cost.innerText=`$${Math.floor(Math.random() * 30)}`;;
 
         let tr = document.createElement("tr")
         tr.setAttribute("class", "tableRowList")
-        tr.append(client_name, nam, bud, spen, prog, remai, cost)
+        tr.append(client_name, nam, bud, spen,prog,remai, cost)
         container.append(tr)
 
 
-    })
+ 
 </script>
+<script src="./scripts/test.js" type="module"></script>

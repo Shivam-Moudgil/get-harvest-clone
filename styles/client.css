@@ -1,14 +1,9 @@
 *{
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif
+    /* box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif */
 }
-#navbar{
-    border: 1px solid red;
-    height: 50px;
-}
-
 #main{
     width: 55%;
     margin:50px auto;
@@ -21,6 +16,19 @@
     display: flex;
     justify-content: space-between;
 }
+::placeholder{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:18px;
+   
+}
+input{
+    padding-left: 10px;
+    font-weight: bold;
+}
+textarea{
+    padding-left: 10px;
+}
+
 #client_currency_code,#name,#buttons,#textarea{
    width: 70%;
    height: 40px;
@@ -39,6 +47,7 @@
     height: 30px;
     border-radius: 5px;
     background-color: white;
+    /* border: 2px solid; */
 }
 #buttons>button:nth-child(1){
     background-color: green;

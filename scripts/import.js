@@ -21,3 +21,7 @@ document.getElementById("foot").innerHTML = footer();
 document.getElementById("logoH").addEventListener("click", () => {
   window.location.href="./index.html"
 })
+
+document.getElementById("signupet").addEventListener("click", () => {
+  window.location.href="./signuppage.html"
+})

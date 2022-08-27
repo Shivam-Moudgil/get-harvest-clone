@@ -3,7 +3,7 @@ document.getElementById("bottom").innerHTML = bottom();
 
 
 document.getElementById("newClient").addEventListener("click", () => {
-  window.location.href = "newClient/client.html";
+  window.location.href = "./client.html";
 });
 
 window.addEventListener("load",()=>{
