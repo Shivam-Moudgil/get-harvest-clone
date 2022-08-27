@@ -1,3 +1,7 @@
+import  {bottom}  from "../components/bottom.js";
+document.getElementById("bottom").innerHTML = bottom();
+
+
 document.getElementById("newClient").addEventListener("click", () => {
   window.location.href = "newClient/client.html";
 });
@@ -54,6 +58,7 @@ let showClientsInfo = (data) => {
 };
 showClientsInfo(clients);
 
-import  {bottom}  from "../components/bottom.js";
-document.getElementById("bottom").innerHTML = bottom();
+
+
+
 

@@ -1,3 +1,6 @@
+import {bottom} from "./components/bottom.js";
+document.getElementById("bottom").innerHTML = bottom();
+
 document.getElementById("track").addEventListener("click", () => {
   document.getElementById("expensesForm").style.display = "block";
   document.querySelector("#trackExp>#team").style.display = "none";
@@ -94,5 +97,36 @@ let deleteExpense = (ele, index) => {
   displayExpense(data);
 };
 
-import {bottom} from "./components/bottom.js";
-document.getElementById("bottom").innerHTML = bottom();
+// -----------------
+// teamates email id's
+let arr=[{email:"a@gamil.com"},
+{email:"b@gamil.com"},
+{email:"c@gamil.com"},
+{email:"d@gamil.com"},]
+
+localStorage.setItem("teammates",JSON.stringify(arr));
+// -----------------
+
+let teammates=JSON.parse(localStorage.getItem("teammates"));
+
+let addTeammates=(data)=>{
+  console.log("data:",data)
+  let cont=document.getElementById("teammates");
+  cont.innerHTML=null;
+
+  let input=document.createElement("input");
+  input.type="text";
+  input.placeholder="Search...";
+
+  let div=document.createElement("div");
+
+  data.forEach((ele)=>{
+    let p=document.createElement("p");
+    p.innerText=ele.email;
+
+    div.append(p);
+    cont.append(input,div);
+  });
+};
+addTeammates(teammates)
+
