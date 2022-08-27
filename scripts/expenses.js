@@ -99,15 +99,15 @@ let deleteExpense = (ele, index) => {
 
 // -----------------
 // teamates email id's
-let arr=[{email:"a@gamil.com"},
-{email:"b@gamil.com"},
-{email:"c@gamil.com"},
-{email:"d@gamil.com"},]
+// let arr=[{email:"a@gamil.com"},
+// {email:"b@gamil.com"},
+// {email:"c@gamil.com"},
+// {email:"d@gamil.com"},]
 
-localStorage.setItem("teammates",JSON.stringify(arr));
+// localStorage.setItem("teammates",JSON.stringify(arr));
 // -----------------
 
-let teammates=JSON.parse(localStorage.getItem("teammates"));
+let teammates=JSON.parse(localStorage.getItem("harvestlogin"));
 
 let addTeammates=(data)=>{
   console.log("data:",data)
@@ -122,11 +122,11 @@ let addTeammates=(data)=>{
 
   data.forEach((ele)=>{
     let p=document.createElement("p");
-    p.innerText=ele.email;
+    p.innerText=ele;
 
     div.append(p);
     cont.append(input,div);
   });
 };
-addTeammates(teammates)
+addTeammates(teammates.member)
 

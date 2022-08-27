@@ -64,7 +64,7 @@
                 </div>
                 <div style="width:20% ;">
                     <h4>Amount</h4>
-                    <input type="text" placeholder="$" id="amount" style="height: 80px; font-size: 20px; padding: 5px;">
+                    <input type="number" placeholder="$" id="amount" style="height: 80px; font-size: 20px; padding: 5px;">
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@
 </html>
 <script>
     let a=JSON.parse(localStorage.getItem("harvestlogin"));
-    document.getElementById("olo").innerText=a.data.project
+    document.getElementById("olo").innerText=a.data[0].project
 
 </script>
 <script src="/scripts/expenses.js" type="module"></script>
