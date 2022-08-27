@@ -1,48 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project2 Page</title>
     <style>
-        #belowHeader{
+        #wholeOuterBody {
+            border: 1px solid gray;
+            height: 1000px;
+        }
+
+        .pageBody {
+            border: 1px solid red;
+            width: 96%;
+            margin: auto;
+            /* height: 80px; */
+        }
+
+        #newProjectBtn {
+            padding: 10px 30px;
+            margin-top: 17px;
+            margin-left: 25px;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+            background-color: green;
+            border-radius: 10px;
+        }
+
+        #proTitle {
+            font-size: 40px;
+            font-family: sans-serif;
+            /* font-weight: 100px; */
+        }
+
+        #belowHeader {
+            border: 1px solid teal;
+            width: 96%;
+            margin: auto;
+            padding: 10px 0px;
             display: flex;
             justify-content: space-between;
-        }
-        #activePro>select{
-            font-size: larger;
-            padding: 5px;
-            border-radius: 10px;
-        }
-        #filterProject>select{
-            font-size: larger;
-            padding: 5px;
-            border-radius: 10px;
-        }
-       
-        tr{
-            display: flex;
-            border: 1px solid gray;
-            width: 1680px;
-            justify-content: space-around;
-        }
-      
 
-        /* .meter { 
-  height: 1px;  
-  position: relative;
-  background: #555;
-  border-radius: 25px;
-  
-  padding: 10px;
-  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
-} */
+        }
+
+        #activePro>select {
+            font-size: larger;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+
+        #filterProject>select {
+            font-size: larger;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+
+        .tableRowList {
+            border: 5px solid hotpink;
+            /* width: 346%; */
+            /* gap: 50px;
+           display: flex;
+           justify-content: space-around;
+           color: gray;
+           font-size: 18px; */
+            background-color: #1d1e1c12;
+            color: #1d1e1cb3;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 2;
+            margin: auto;
+            text-align: center;
+            /* padding: 50px;
+            display: table-row; */
+        }
+        .tableRowList>th{
+            padding: 20px 77px;
+        }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Projects</h1>
+    <div id="wholeOuterBody">
+
+        <div class="pageBody">
+            <button id="newProjectBtn">+ New Project</button>
+        </div>
+        <div class="pageBody">
+            <h1 id="proTitle">Projects</h1>
+        </div>
         <div id="belowHeader">
             <div id="activePro">
                 <select name="" id="">
@@ -60,85 +108,101 @@
                 </select>
             </div>
         </div>
-    </header>
-    <table>
-        <thead>
-            <tr>
-                <th>client</th>
-                <th>Budget</th>
-                <th>Spent</th>
-                <th></th>
-                <th>Remaining</th>
-                <th>costs</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody class="projectList">
 
-            <!-- <div class="meter">
-                <span style="width: 25%"></span>
-            </div>
-             -->
-        </tbody>
-    </table>
+        <div class="pageBody">
+            <table>
+                <thead>
+                    <tr class="tableRowList">
+
+                        <th>Client</th>
+                        <th>Project Name</th>
+                        <th>Budget</th>
+                        <th>Spent</th>
+                        <th>Progress</th>
+                        <th>Remaining</th>
+                        <th>Costs</th>
+                    </tr>
+                </thead>
+
+                <tbody id="sgTableContainer">
+
+                    <tr class="tableRowList">
+                       
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
 </body>
+
 </html>
 <script>
-   
-   
-    let data=[
+    let data = [
         {
-            client:"suraj gundle",
-             budget:"$500",
-             spent:"$200",
-             remain:"$300",
-             costs:"$400"
+            client: "Suraj Gundle",
+            name: "abcInfotech",
+            budget: 500,
+            spent: 300,
+            progress: 80,
+            remaining: 100,
+            costs: 0.00,
         },
         {
-            client:"shubham gundle",
-             budget:"$1000",
-             spent:"$500",
-             remain:"$500",
-             costs:"$800"
+            client: "Shubham Gundle",
+            name: "abcInfotech",
+            budget: 500,
+            spent: 300,
+            progress: 80,
+            remaining: 100,
+            costs: 0.00,
+        },
+        {
+            client: "Prasad Gundle",
+            name: "abcInfotech",
+            budget: 500,
+            spent: 300,
+            progress: 80,
+            remaining: 100,
+            costs: 0.00,
         }
     ]
-    localStorage.setItem("projectLists",JSON.stringify(data))
-            let dataFromLS=JSON.parse(localStorage.getItem("projectLists"))
 
-            dataFromLS.forEach((el,index)=>{
-        let containerForShowList=document.querySelector(".projectList")
-        //containerForShowList.innerHTML=null;
-let {client,budget,spent,remain,costs} =el
+    localStorage.setItem("proInfo", JSON.stringify(data))
+    let dataFromLS = JSON.parse(localStorage.getItem("proInfo")) || []
 
-console.log(budget)
+    let container = document.getElementById("sgTableContainer")
+    container.innerHTML = null;
+    dataFromLS.forEach(({ client, name, budget, spent, progress, remaining, costs }) => {
 
-        let tr1=document.createElement("tr")
+        progress=spent/budget*100;
 
-        let cli=document.createElement("td")
-        cli.innerText=client
+        remaining=100-progress;
 
-        let bud=document.createElement("td")
-        bud.innerText=budget;
+        let client_name = document.createElement("td")
+        client_name.innerText = client
+        let nam = document.createElement("td")
+        nam.innerText = name;
+        let bud = document.createElement("td")
+        bud.innerText = budget;
+        let spen = document.createElement("td")
+        spen.innerText = spent;
+        let prog = document.createElement("td")
+        prog.innerText =`${progress}%`;
+        let remai = document.createElement("td")
+        remai.innerText =`${remaining}%` ;
+        let cost = document.createElement("td")
+        // cost.innerText = costs;
+        cost.innerText=`$${Math.floor(Math.random() * 30)}`;;
 
-     
-        let spe=document.createElement("td")
-        spe.innerText=spent
-        let x1=document.createElement("td")
-        let progress=document.createElement("div")
-        progress.setAttribute("class")
-        x1.innerText="jsjjs";
-        let rem=document.createElement("td")
-        rem.innerText=remain
-        let cos=document.createElement("td")
-        cos.innerText=costs;
-        let x2=document.createElement("td")
-        x2.innerText="jjj"
+        let tr = document.createElement("tr")
+        tr.setAttribute("class", "tableRowList")
+        tr.append(client_name, nam, bud, spen, prog, remai, cost)
+        container.append(tr)
 
-        tr1.append(cli,bud,spe,x1,rem,cos,x2)
-        containerForShowList.append(tr1)
 
-        
     })
-    
-    
 </script>

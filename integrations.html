@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Page</title>
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+
+        #integrationBody {
+            background-color: #fff8f1;
+            width: 100%;
+            margin-bottom: 100px;
+            height: 2500px;
+        }
+
+        .intContent {
+            border: 1px solid darkblue;
+            width: 95%;
+            margin: auto;
+            margin-top: 100px;
+            /* height: 600px; */
+            display: flex;
+            /* margin: 100px 0px 100px 0px; */
+        }
+
+        #sgtextDiv {
+            border: 1px solid teal;
+            width: 50%;
+        }
+
+        #sgtextDiv>h1 {
+            font-weight: 400;
+            text-decoration: none;
+            font-family: MuotoWeb, sans-serif;
+            font-style: normal;
+            color: #1d1e1c;
+            font-size: 55px;
+            margin: 150px 0px 50px 0px;
+        }
+
+        #sgtextDiv>h3 {
+            line-height: 1.3;
+            font-weight: 25;
+            text-decoration: none;
+            font-family: MuotoWeb, sans-serif;
+
+            color: #1d1e1c;
+            font-size: 40px;
+        }
+        .forCenter{
+            /* border: 5px solid tan; */
+            margin: auto;
+        }
+        .logoImg{
+            width: 80%;
+            height: 100%;
+            margin-left: 120px;
+           
+        }
+       
+        #appSearchBox>input{
+              width: 384%;
+              border-radius: 20px;
+              padding: 25px;
+              font-size: 28px;
+        }
+        #gallery{
+            /* border: 2px solid teal; */
+            /* height: 500px; */
+            width: 100%;
+            display: flex;
+        }
+        #galleryList{
+           /* border: 1px solid gray; */
+           width: 33%;
+        }
+        #galleryData{
+
+            /* border: 1px solid green; */
+            width: 100%;
+        }
+        #galleryData{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 50px;
+            margin: 5px;
+            
+            
+        }
+        #galleryData>div{
+            /* border: 1px solid gray; */
+            padding: 10px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
+            
+        }
+        #galleryData>div:hover{
+            cursor: pointer;
+            background-color: wheat;
+        }
+        #galleryData>div>p{
+            font-size: larger;
+        }
+        .appImg{
+            width: 100px;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="integrationBody">
+        <div class="intContent">
+            <div id="sgtextDiv">
+                <h1>Time tracking integrated with your team’s favorite apps</h1>
+                <h3>Harvest works with the most popular tools so your team can track time effortlessly.</h3>
+            </div>
+            <div class="forCenter">
+                <div class="harvestApps">
+                      <img class="logoImg" src="./LogoImg.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <hr  style="margin-top:120px;margin-bottom:120px; width: 100%;border: 1px solid orangered; ">
+        <div class="intContent">
+            <div id="appSearchBox">
+                
+                <input type="text" oninput="search()" id="query" placeholder="Find an app or service you use" >
+            </div>
+        </div>
+        <div class="intContent">
+
+            <div id="gallery">
+                <!-- <div id="galleryList">
+                    <nav class="category">
+                        <span><a href="" class="smoothingCata">All Integrations</a></span>
+                        <span><a href="" class="smoothingCata">Analytics & reporting</a></span>
+                        <span><a href="" class="smoothingCata">Browser extensions</a></span>
+                        <span><a href="" class="smoothingCata">Communication & CRM</a></span>
+                        <span><a href="" class="smoothingCata">Contracts & proposals</a></span>
+                        <span><a href="" class="smoothingCata">Development & connectivity</a></span>
+                        <span><a href="" class="smoothingCata">Featured integrations</a></span>
+                        <span><a href="" class="smoothingCata">Finance & payments</a></span>
+                        <span><a href="" class="smoothingCata">Issue tracking & support</a></span>
+                        <span><a href="" class="smoothingCata">Productivity</a></span>
+                        <span><a href="" class="smoothingCata">Project management</a></span>
+
+                    </nav>
+                </div> -->
+                <div id="galleryData">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    // let appData=[
+    //     {
+    //         img:"https://www.getharvest.com/hs-fs/hubfs/integrations-new/asana.png?width=300&name=asana.png",
+    //         name:"Asana",
+    //         info:"Track time right from your Asana tasks without switching to Harvest.",
+    //     },
+    //     {
+    //         img:"https://www.getharvest.com/hs-fs/hubfs/integrations-new/flow.png?width=300&name=flow.png",
+    //         name:"Flow",
+    //         info:"Start and stop timers from this project management tool.",
+    //     },
+      
+    //     {
+    //         img:"	https://www.getharvest.com/hs-fs/hubfs/integrations-new/github.png?width=300&name=github.png",
+    //         name:"GitHub",
+    //         info:"Track time from issues and pull requests with a Harvest browser extension.",
+    //     },
+    //     {
+    //         img:"	https://www.getharvest.com/hs-fs/hubfs/integrations-new/slack.png?width=300&name=slack.png",
+    //         name:"Slack",
+    //         info:"Start timers, check someone's status, and keep track of project budgets.",
+    //     },
+    //     {
+    //         img:"https://www.getharvest.com/hs-fs/hubfs/integrations-new/xero.png?width=300&name=xero.png",
+    //         name:"Xero",
+    //         info:"Copy Harvest invoices and payments to this accounting app, eliminating double entry.",
+    //     },
+    //     {
+    //         img:"https://www.getharvest.com/hs-fs/hubfs/integrations-new/stripe.png?width=300&name=stripe.png",
+    //         name:"Stripe",
+    //         info:"Receive invoice payments online by credit card or ACH payment.",
+    //     },
+    //     {
+    //         img:"https://www.getharvest.com/hs-fs/hubfs/integrations-new/paypal.png?width=300&name=paypal.png",
+    //         name:"PayPal",
+    //         info:"Accept online payments through PayPal Standard.",
+    //     },
+    //     {
+    //         img:"	https://www.getharvest.com/hs-fs/hubfs/integrations-new/chrome.png?width=300&name=chrome.png",
+    //         name:"Chrome",
+    //         info:"Track time right from your browser and popular project management tools.",
+    //     },
+    //     {
+    //         img:"	https://www.getharvest.com/hs-fs/hubfs/integrations-new/jira.png?width=300&name=jira.png",
+    //         name:"Jira",
+    //         info:"Track time right from the issue and project tracking software Jira.",
+    //     },
+    //     {
+    //         img:"	https://www.getharvest.com/hs-fs/hubfs/integrations-new/outlook.png?width=300&name=outlook.png",
+    //         name:"Outlook.com",
+    //         info:"Pull your Outlook calendar events into your Harvest timesheet.",
+    //     },
+    //     {
+    //         img:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHUAAAB1CAMAAABH2l6OAAAAwFBMVEVChfT///80qFP7vAQZZ9IYgDjqQzU7gvSFq/f7ugArpk38z3h/wo5JifRsnPYpcd0GZdUngn0XgDAjjUIlrFTvbCzEZD7tQDR2gawyfvMoevPH1/vpNSPucWrud2/ve3Tz9v6nwflhlvXl7f0pbtNbiNqdtOgAWc9vlN2Rs/hZkfUddvO0yvrta2MohUJbmmmgwKXi7OQAdRtwpHp7jsR7pffQ3vyduvja5fwAcPNJmoTVjFPuYxv0nm7DWzHEl3tsWNtCAAADMElEQVRoge3biXLTMBAAUC0NKBSshpZLcgA76hUnvXET7v//K6wjjS+Fw1rNMGhn2onjTN6sbK0OtwRUyJwlxHMcjDpxfHIqtUeqn6wUnPpG+9TRZHJ2btWMcO+kQ1XwcabUjPjPc4dasUotUTJ1q6PJORApcFC3OjqTJEdKdYc6OSUM56ruVE+I9376a3V0jGXuVEdRjWpUoxrVqEY1sEqHxMHEHbvQYjwkPr51x65MxzAknj3dc0ZUoxrVqEb1b9QszefjeZ5mAdV1yaug6he772PypChmntW8thFGOevkKxmvBlXiVx03t2p4IptoanatEq/q3O7UqHTMi6KR7die96qmJlORMMYK85rPa5e82GwfeVXNMVmq/DLbmPyhjWuX3KeaLtTX8rU9zIya2yNW2yfzmut9SblYbhtcOZSZU5zblvCuVh1jVftCUJeWmr4pF/qzfKk36TyrzaipoDYieSEhkMrsQUEX6n5GV/V15atN4wtdINFVfVqsm28iq+tE96P2WTT1Pk3TnOma0KqImGohuH0Go27aUOpsU/n4vDuyh1A7qQZQCafL9kk0lVVzlISauivyUKoOuUy0K1rZolcJ+7ireUfh12EtbAbYYKrUA2wRWAX97ClpNDGKmnYTI7LzlldV5vRTg0jwVcmqPtrIPOP4LWymRqK2uNGTcjoDTBVKUwkfhvGlThW756z1dJ/SXF/IdWnXPBJX3SxzOGElm9mZfrsQI/ScYru6suMOZ4CuZrPW4/cOilMlVvU/H6Fi1UaRKqIsBVfLccq5GHenEjBbCCGob1WtIVclY+Uqhd+Jf3vnJ6pRjep/qbofKnZW43+outE98sIdn58PiS+vXPH1Gzl0x9H+gHj5+s2T/pheAHnsjqNHA8KpTt9BeHX6HsKr0w8QXjVoYNWiYdUNGlR9QEOqWzSgWkPDqbqfhlZVRQquVrU3vNpCw6jN5g2kNm6kUGq9ywRTe1Agl8hqHwrkClftRYFcH2Kq/SiQm1tE1YECgTtnsoNVF6r+U8Z5Pw1Vu/20pt5cOrIdqHYqUkMFuLvtdYep3y+cqFHh5vqqp50Hqfs/3Cj8BPzSpLjdyveJAAAAAElFTkSuQmCC",
+    //         name:"Google Calendar",
+    //         info:"Pull your Google Calendar events into your Harvest timesheet.",
+    //     },
+    //     {
+    //         img:" https://www.getharvest.com/hs-fs/hubfs/integrations-new/workspace.png?width=300&name=workspace.png",
+    //         name:"Google Workspace",
+    //         info:"Sign in with your Google account and export time data into Google Drive.",
+    //     },
+    //     {
+    //         img:"	https://www.getharvest.com/hs-fs/hubfs/integrations-new/zendesk.png?width=300&name=zendesk.png",
+    //         name:"Zendesk",
+    //         info:"A professional help desk tool where you can track time spent on tickets for billing.",
+    //     },
+    //     {
+    //         img:"	https://www.getharvest.com/hs-fs/hubfs/integrations-new/teamwork.png?width=300&name=teamwork.png",
+    //         name:"Teamwork Projects",
+    //         info:"Track time and export invoices right from this collaboration platform.",
+    //     },
+    //     {
+    //         img:"https://www.getharvest.com/hs-fs/hubfs/integrations-new/firefox.png?width=300&name=firefox.png",
+    //         name:"Firefox",
+    //         info:"Track time right from your browser and popular project management tools.",
+    //     },
+    //     {
+    //         img:"https://www.getharvest.com/hs-fs/hubfs/integrations-new/edge.png?width=300&name=edge.png",
+    //         name:"Edge",
+    //         info:"Track time right from your browser and popular project management tools.",
+    //     },
+        
+    // ]
+
+    let search=async()=>{
+        let query=document.getElementById("query").value;
+        let res=await fetch("https://protected-fjord-93694.herokuapp.com/api/data")
+        let data=await res.json()
+        console.log(typeof query)
+        data=data[0].query
+
+        console.log(data)
+        
+    }
+
+    let getData=async()=>{
+        let res=await fetch("https://protected-fjord-93694.herokuapp.com/api/data")
+        let data=await res.json()
+      //  console.log(data[0].slack)
+        append(data)
+    }
+    getData()
+
+    let append=(data)=>{
+        let container=document.getElementById("galleryData")
+        container.innerHTML=null;
+        data.forEach(({img,name,info})=>{
+            // console.log(img,name,info)
+            let div=document.createElement("div")
+
+            let image=document.createElement("img")
+            let nameOfApp=document.createElement("h2")
+            let desc=document.createElement("p")
+
+            image.setAttribute("class","appImg")
+
+            image.src=img;
+            nameOfApp.innerText=name;
+            desc.innerText=info;
+
+            div.append(image,nameOfApp,desc)
+            container.append(div)
+
+
+        })
+    }
+    //append(appData)
+</script>
