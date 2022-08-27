@@ -6,7 +6,7 @@ document.querySelector("#signin").addEventListener("click",()=>{
 
   let  email=document.querySelector("#email").value;
   let password =document.querySelector("#password").value;
- // console.log(password)
+ 
 
   if(checkuser(email)===true){
     let harvestUser=JSON.parse(localStorage.getItem("harvestUser"))||[];

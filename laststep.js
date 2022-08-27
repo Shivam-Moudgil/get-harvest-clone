@@ -9,3 +9,22 @@ let t1=0;
         t1=0;
     }
 })
+
+document.querySelector("#nexttowlcom").addEventListener("click",()=>{
+    let harvestlogin=JSON.parse(localStorage.getItem("harvestlogin"));
+
+
+    let harvestUser=JSON.parse(localStorage.getItem("harvestUser"))
+    
+    console.log(harvestlogin.email)
+    console.log(harvestUser[0].email)
+    let i=0;
+    while(i<harvestUser.length){
+        if(harvestUser[i].email==harvestlogin.email){
+            harvestUser.splice(i,1);
+            harvestUser.push(harvestlogin)
+        }
+        i++;
+    }
+    localStorage.setItem("harvestUser",JSON.stringify(harvestUser));
+})

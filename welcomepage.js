@@ -131,8 +131,6 @@ document.querySelector("#nexttowlcom").addEventListener("click",()=>{
 
 let harvestlogin=JSON.parse(localStorage.getItem("harvestlogin"));
 
-//console.log(harvestlogin);
-// if(harvestlogin,) 
 if(harvestlogin.member===undefined){
     harvestlogin.member=[];
 }
@@ -147,38 +145,11 @@ for(let j=0; j<i-1; j++){
     console.log(harvestlogin)
     localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
     let harvestUser=JSON.parse(localStorage.getItem("harvestUser"))
-    //console.log(harvestUser)
-    // for(let i=0; i<harvestUser.length; i++){
-    //     if(harvestUser[i].email===harvestlogin.email){
-    //         harvestUser[i]=harvestlogin;
-    //     }  
-    // }
-    // localStorage.setItem("harvestUser",JSON.stringify(harvestUser))
-    // console.log(harvestUser)
+   
 }
 window.location.href="./secondwlcm.html"
  
 
-// for(let j=0; j<i-1; j++){
-//     let index=j+1;
-//     let idd=`email${index}`
-//      temp=document.getElementById(idd).value;
-//     if(temp!==null){
-//         harvestlogin.member.push(temp)
-//     }
-//     console.log(harvestlogin)
-//     localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
-//     let harvestUser=JSON.parse(localStorage.getItem("harvestUser"))
-//     //console.log(harvestUser)
-//     for(let i=0; i<harvestUser.length; i++){
-//         if(harvestUser[i].email=harvestlogin.email){
-//             harvestUser[i]=harvestlogin;
-//         }
-//     }
-//     localStorage.setItem("harvestUser",JSON.stringify(harvestUser))
-//     console.log(harvestUser)
-// }
-// window.location.href="./secondwlcm.html"
 })
 
 
