@@ -12,10 +12,13 @@ nexttowlcom.addEventListener("click",()=>{
     }
 
     if(harvestlogin.data===undefined){
-        harvestlogin.data=[];
+        harvestlogin.data = [];
+        harvestlogin.data.push(details);
+    } else {
+        harvestlogin.data.push(details);
     }
- 
-    harvestlogin.data.push(details);
+    // harvestlogin.data = [];
+    
     localStorage.setItem("harvestlogin",JSON.stringify(harvestlogin))
    
     window.location.href="./laststep.html"

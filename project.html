@@ -89,7 +89,7 @@
     <div id="wholeOuterBody">
 
         <div class="pageBody">
-            <button id="newProjectBtn">+ New Project</button>
+            <button onclick="lkl()" id="newProjectBtn">+ New Project</button>
         </div>
         <div class="pageBody">
             <h1 id="proTitle">Projects</h1>
@@ -176,26 +176,26 @@
 
     localStorage.setItem("proInfo", JSON.stringify(data))
     let ld = JSON.parse(localStorage.getItem("harvestlogin")) || []
-//    console.log(ld)
+   console.log(ld)
     let container = document.getElementById("sgTableContainer")
     container.innerHTML = null;
+let harv=ld.data;
 
-
-
+harv.map((el)=>{
         let client_name = document.createElement("td")
-        client_name.innerText = ld.data.client
+        client_name.innerText =el.client
         let nam = document.createElement("td")
-        nam.innerText = ld.data.project;
+        nam.innerText = el.project;
         let bud = document.createElement("td")
-        bud.innerText = ld.data.budget;
-        let val2=+ld.data.budget;
+        bud.innerText =el.budget;
+        let val2=+el.budget;
         
         let spen = document.createElement("td")
-        let val=Math.floor(Math.random() * 1000)
+        let val=Math.floor(Math.random() * 11+2)
         spen.innerText = `$${val}`;
         let prog = document.createElement("td")
     
-        let proggressVal=(val/(val2)*100);
+        let proggressVal=Math.floor(val/(val2)*100);
         
         prog.innerText =`${proggressVal}%`;
         let remai = document.createElement("td")
@@ -211,6 +211,12 @@
         tr.setAttribute("class", "tableRowList")
         tr.append(client_name, nam, bud, spen,prog,remai, cost)
         container.append(tr)
+})
+
+let lkl=()=>{
+    window.location.href="./createfirstproject.html"
+}
+
 
 </script>
 <script src="./scripts/test.js" type="module"></script>

@@ -45,13 +45,31 @@ justify-content: center;
     width: 40px;
     border-radius: 80%;
 }
-.path >a{
+.path2 >a{
     /* border: 1px solid; */
     padding: 13px 0px;
     text-decoration: none;
     color:white;
 }
-.path>a:hover{
+.path2>a:hover{
     background-color: #fb7d33;
 
+}
+.path{
+ align-items: center;
+ gap:10px
+}
+.path2{
+    /* border: 1px solid; */
+    display: flex;
+}
+.path>select{
+  background-color: #fa5d00;
+  color: white;
+  padding: 4px;
+  transform: 0.3 sec all;
+}
+.path>option{
+    background-color: black;
+    padding: 4px ;
 }
