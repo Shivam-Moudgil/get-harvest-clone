@@ -176,7 +176,7 @@
 
     localStorage.setItem("proInfo", JSON.stringify(data))
     let ld = JSON.parse(localStorage.getItem("harvestlogin")) || []
-
+//    console.log(ld)
     let container = document.getElementById("sgTableContainer")
     container.innerHTML = null;
 
@@ -187,23 +187,30 @@
         let nam = document.createElement("td")
         nam.innerText = ld.data.project;
         let bud = document.createElement("td")
-        bud.innerText = "34";
+        bud.innerText = ld.data.budget;
+        let val2=+ld.data.budget;
+        
         let spen = document.createElement("td")
-        spen.innerText = "20";
+        let val=Math.floor(Math.random() * 1000)
+        spen.innerText = `$${val}`;
         let prog = document.createElement("td")
-        prog.innerText =`${50}%`;
+    
+        let proggressVal=(val/(val2)*100);
+        
+        prog.innerText =`${proggressVal}%`;
         let remai = document.createElement("td")
-        remai.innerText =`${50}%` ;
+        let val3=(100-proggressVal)
+        val3=val3.toFixed(2)
+        
+        remai.innerText =`${val3}%` ;
         let cost = document.createElement("td")
         // cost.innerText = costs;
-        cost.innerText=`$${Math.floor(Math.random() * 30)}`;;
+        cost.innerText=`$${Math.floor(Math.random() * 100)}`;;
 
         let tr = document.createElement("tr")
         tr.setAttribute("class", "tableRowList")
         tr.append(client_name, nam, bud, spen,prog,remai, cost)
         container.append(tr)
 
-
- 
 </script>
 <script src="./scripts/test.js" type="module"></script>
