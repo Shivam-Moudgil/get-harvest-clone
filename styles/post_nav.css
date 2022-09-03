@@ -66,10 +66,24 @@ justify-content: center;
 .path>select{
   background-color: #fa5d00;
   color: white;
-  padding: 4px;
+  padding: 11px 6px;
   transform: 0.3 sec all;
+  border: none;
+/* color:black; */
+font-family:'Courier New', Courier, monospace;
+font-weight: bolder;
+letter-spacing: 1px;
+  width: 100%;
+  /* margin-left: 30px; */
 }
 .path>option{
     background-color: black;
     padding: 4px ;
+}
+.nav_ele4{
+    font-family:'Times New Roman', Times, serif;
+    font-style: oblique;
+    /* border: 1px solid orange; */
+    /* padding: 10px; */
+    text-decoration:underline;
 }

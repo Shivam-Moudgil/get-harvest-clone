@@ -8,18 +8,18 @@ let footer = () => {
         </div>
         <div>
           <div>
-<h4 class="mole">Harvest</h4>
-<p class="same">Home</p>
+<h4 class="mole" >Harvest</h4>
+<p class="same" id="harc">Home</p>
 <p class="same">Why Harvest?</p>
-<p class="same">Features</p>
-<p class="same">Pricing</p>
-<p class="same">Integrations</p>
+<p class="same" id="ft">Features</p>
+<p  class="same" id="price">Pricing</p>
+<p class="same" id="int">Integrations</p>
 <p class="same">Apps</p>
 <p class="same">Security</p>
           </div>
           <div>
             <h4 class="mole">Community</h4>
-            <p class="same">Customer stories</p>
+            <p id="CD" class="same">Customer stories</p>
 <p class="same">Resources</p>
 <p class="same">Webinars</p>
 <p class="same">Help & support</p>
@@ -49,7 +49,7 @@ let footer = () => {
           <i style="font-size: 24px" class="fa">&#xf099;</i>
           <p>Twitter</p>
         </div>
-        <div class="sc">
+        <div class="sc" id="linkd">
         <i style="font-size:24px" class="fa">&#xf08c;</i>
           <p>Linkedin</p>
         </div>

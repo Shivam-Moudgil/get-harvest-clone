@@ -57,9 +57,13 @@ gap:30px;
 .nav-trans{
     background-color: transparent;
 }
-
+button{
+    cursor: pointer;
+}
+#nav img{
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 600px) {
- 
 
 }

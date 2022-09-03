@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="./styles/time.css" />
-    <link rel="stylesheet" href="./styles/post_nav.css">
+    <link rel="stylesheet" href="./styles/post_nav.css" />
   </head>
   <body>
     <div id="navbar"></div>
@@ -90,7 +90,7 @@
         <div>
           <p class="har hard">0:00</p>
           <button class="timerr">🕑 Start</button>
-          <button>Edit</button>
+          <button onclick="pl()">Edit</button>
         </div>
       </div>
       <div id="tt"></div>
@@ -99,14 +99,15 @@
 </html>
 
 <script>
-  
-  let data=JSON.parse(localStorage.getItem("harvestlogin"))
-  let added = () => {
-  
+  let timeleft;
+  let ab;
 
-    let a = document.getElementById("fom");
-    a.innerHTML = "";
-    // a.style.visibility="visible"
+  let data = JSON.parse(localStorage.getItem("harvestlogin"));
+  let a = document.getElementById("fom");
+  // a.innerHTML = "";
+  let added = () => {
+    function aaa(){
+    // a.style.visibility = "visible";
     a.style.display = "block";
     let div = document.createElement("div");
     let div2 = document.createElement("div");
@@ -124,14 +125,14 @@
     let op4 = document.createElement("option");
     let op5 = document.createElement("option");
 
-console.log(data.data);
-let harv=data.data
-for(i in harv){
-console.log(harv[i].project)
-document.querySelector(".hard").innerText=harv[i].project
-document.querySelector(".small").innerText=harv[i].client
-   op7.innerText = harv[i].project;
-}
+    console.log(data.data);
+    let harv = data.data;
+    for (i in harv) {
+      console.log(harv[i].project);
+      document.querySelector(".hard").innerText = harv[i].project;
+      document.querySelector(".small").innerText = harv[i].client;
+      op7.innerText = harv[i].project;
+    }
 
     let in1 = document.createElement("input");
     let in2 = document.createElement("input");
@@ -142,7 +143,7 @@ document.querySelector(".small").innerText=harv[i].client
     h3.innerText = `New time entry for ${new Date().toDateString()}`;
     h4.innerText = "Project / Task";
     op6.innerText = "Example Project";
- 
+
     op1.innerText = "Design";
     op2.innerText = "Marketing";
     op3.innerText = "Programming";
@@ -157,8 +158,9 @@ document.querySelector(".small").innerText=harv[i].client
       alert("done");
     };
 
-    let sht = in2.value;
-    localStorage.setItem("sec", JSON.stringify({sht}));
+    let sht = +in2.value;
+    console.log(sht);
+    localStorage.setItem("sec", JSON.stringify(sht));
 
     remov.onclick = () => {
       // a.style.visibility='hidden'
@@ -173,48 +175,55 @@ document.querySelector(".small").innerText=harv[i].client
     form.append(h4, sel, sel2, in1, in2, rsub);
     div.append(div2, form);
     a.append(div);
-    
   };
-  let harv=data.data;
-for(i in harv){
-console.log(harv[i].project)
-document.querySelector(".hard").innerText=harv[i].project
-document.querySelector(".small").innerText=harv[i].client}
+  aaa()
+  }
+  let harv = data.data;
+  for (i in harv) {
+    console.log(harv[i].project);
+    document.querySelector(".hard").innerText = harv[i].project;
+    document.querySelector(".small").innerText = harv[i].client;
+  }
 
-// document.querySelector(".small").innerText=data.data.client
+  // document.querySelector(".small").innerText=data.data.client
   document.getElementById("sf").innerText = new Date().toDateString();
   let t = JSON.parse(localStorage.getItem("tasks"));
   console.log(t);
 
   document.querySelector(".timerr").addEventListener("click", () => {
-     let downloadTimer;
-    
-     let  v= document.querySelector(".har")
-     let yaar4 = document.querySelector(".timerr");
-      let a=v.value
-      if ((yaar4.innerText === "🕑 Start")) {
-   yaar4.innerText = "Stop";
-      
-    let timeleft = 10;
- downloadTimer = setInterval(function () {
-      if (timeleft <= 0) {
-        clearInterval(downloadTimer);
-      }
-     v.innerText = `0:${10 - timeleft}`;
-      timeleft -= 1;
-    }, 3000);
-  
-} else if(yaar4.innerText==="Stop"){
-   
-    yaar4.innerText="🕑 Start"
-    
+    let downloadTimer;
 
-} 
+    let v = document.querySelector(".har");
+    let yaar4 = document.querySelector(".timerr");
+    let a = v.value;
+    if (yaar4.innerText === "🕑 Start") {
+      yaar4.innerText = "Reset";
+
+      timeleft = 20;
+      ab = 20;
+      console.log(timeleft, ab);
+      downloadTimer = setInterval(function () {
+        if (timeleft <= 0) {
+          clearInterval(downloadTimer);
+        }
+        v.innerText = `0:${ab - timeleft}`;
+        timeleft -= 1;
+      }, 1000);
+    } else if (yaar4.innerText === "Reset") {
+      clearInterval(downloadTimer);
+      ab = 0;
+      timeleft = 0;
+
+      yaar4.innerText = "🕑 Start";
+    }
   });
 
+  function pl() {
+    alert("You can't edit it ")
+    //  aaa()
+    a.style.display = "block";
+    a.style.visibility="visible";
 
-
-
-
+  }
 </script>
 <script src="./scripts/test.js" type="module"></script>
